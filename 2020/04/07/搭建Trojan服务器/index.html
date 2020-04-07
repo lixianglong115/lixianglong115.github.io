@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xianglong115.top">
-  <title>V2rey与博客共存 | xianglong’s blog</title>
+  <title>搭建Trojan服务器 | xianglong’s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="买一台国外的VPS也是不便宜，如果能在这台VPS上搭梯子的同时还能间隔自己的博客，岂不美哉！">
+  <meta name="description" content="记录一下我搭梯子的过程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="V2rey与博客共存">
-<meta property="og:url" content="http://www.xianglong115.top/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/index.html">
+<meta property="og:title" content="搭建Trojan服务器">
+<meta property="og:url" content="http://www.xianglong115.top/2020/04/07/%E6%90%AD%E5%BB%BATrojan%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="xianglong’s blog">
-<meta property="og:description" content="买一台国外的VPS也是不便宜，如果能在这台VPS上搭梯子的同时还能间隔自己的博客，岂不美哉！">
-<meta property="og:image" content="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE1.png">
-<meta property="og:image" content="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE2.png">
-<meta property="og:image" content="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE3.png">
-<meta property="article:published_time" content="2020-03-24T07:52:35.000Z">
-<meta property="article:modified_time" content="2020-03-24T09:10:34.490Z">
+<meta property="og:description" content="记录一下我搭梯子的过程">
+<meta property="article:published_time" content="2020-04-07T12:22:35.000Z">
+<meta property="article:modified_time" content="2020-04-07T13:57:58.988Z">
 <meta property="article:author" content="祥龙">
 <meta property="article:tag" content="xianglong">
 <meta property="article:tag" content="祥龙">
@@ -28,7 +25,6 @@
 <meta property="article:tag" content="祥龙的博客">
 <meta property="article:tag" content="xianglong&#39;s blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE1.png">
   
     <link rel="alternative" href="/atom.xml" title="xianglong’s blog" type="application/atom+xml">
   
@@ -187,14 +183,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-V2rey与博客共存" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-搭建Trojan服务器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      V2rey与博客共存
+      搭建Trojan服务器
     </h1>
   
 
@@ -206,8 +202,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/" class="archive-article-date">
-        <time datetime="2020-03-24T07:52:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+<a href="/2020/04/07/%E6%90%AD%E5%BB%BATrojan%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
+        <time datetime="2020-04-07T12:22:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
 </a>
 
   
@@ -220,7 +216,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.3k字</span>
+      <span class="post-count">569字</span>
     </span>
   </span>
 
@@ -229,7 +225,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -240,23 +236,24 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>买一台国外的VPS也是不便宜，如果能在这台VPS上搭梯子的同时还能间隔自己的博客，岂不美哉！<a id="more"></a><br>这篇文章主要是记录一下我的V2rey与博客共存的方法<br><img src="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE1.png" alt="这是我的vps的使用情况"><br>还是要先提醒一下，如果vps配置太低还是不要考虑了，最好是有1G的内存<br>首先你需要一台VPS，我用的Vultr，如果你没有可以考虑一下，附上我的邀请新人的连接：<a href="https://www.vultr.com/?ref=8471374" target="_blank" rel="noopener">https://www.vultr.com/?ref=8471374</a><br>阿里云的服务器更便宜，没条件的可以试一下<a href="https://www.aliyun.com/" target="_blank" rel="noopener">https://www.aliyun.com/</a><br>我们还需要购买一个域名，用来搭建V2rey与博客,我是在腾讯云购买的，附上腾讯购买域名的网址：<a href="https://dnspod.cloud.tencent.com/" target="_blank" rel="noopener">https://dnspod.cloud.tencent.com/</a><br>到这,我们的需要花钱的部分就已经结束了。下面开始开搞！<br>1.在vps上安装Debian 9系统<br>2.把你的域名解析到你的vps上，最好一个泛解析，一个www解析，一个二级域名解析<br>3.使用ssh登录到你的vps<br>4.更改vps的系统时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf &#x2F;etc&#x2F;localtime</span><br><span class="line">ln -s &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br></pre></td></tr></table></figure>
-<p>5.安装宝塔面板（中间需要输个y）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install-ubuntu_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
-<p>安装完上面显示的类似这个的，就是你登录宝塔面板的网址、账号和密码。<br><img src="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE2.png" alt="BT的网址、账号和密码"><br>6.请按照这个安装（安装方式一定要是编译安装）在这里可能要花费很长时间，不要急耐心等待就好了<br><img src="https://gitee.com/lixianglong115/image_store/raw/master/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98%E6%8F%92%E5%9B%BE3.png" alt=""><br>7.安装好宝塔面板，在宝塔面板的网站中添加站点，在域名的那一栏填上之前解析的二级域名。（这时搭建V2rey用的网站就搭建好了，你可以在浏览器访问你的网站试试）<br>8.点击右边的设置，点击左面中间的SSL，点击上面第二个Let’s Encrypt，选中你的域名，点击申请，获取SSL证书后打开右上角的强制开启HTTPS。（此时你的SSL证书就申请下来了，此时你登录你的网站，你可以看到左上角会有一把小锁）<br>9.配置站点的nginx，还是在宝塔面板的网站中点击右边的设置，点击配置文件，在倒数第二行最后敲两下回车，输入下方的代码，点击保存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location &#x2F;SoftDown &#123;</span><br><span class="line">proxy_redirect off;</span><br><span class="line">proxy_pass http:&#x2F;&#x2F;127.0.0.1:65432;</span><br><span class="line">proxy_http_version 1.1;</span><br><span class="line">proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">proxy_set_header Host $http_host;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>10.开启BBR加速</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo “net.core.default_qdisc&#x3D;fq” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf</span><br><span class="line">echo “net.ipv4.tcp_congestion_control&#x3D;bbr” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure>
-<p>11.安装V2rey</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s https:&#x2F;&#x2F;install.direct&#x2F;go.sh)</span><br></pre></td></tr></table></figure>
-<p>12.把/etc/v2ray/config.json文件打开，把里面的代码改成下面的，点击保存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;inbounds&quot;: [&#123;</span><br><span class="line">    &quot;port&quot;: 65432,           &#x2F;&#x2F;此处为安装时生成的端口，可修改随意，但是保证和下面提到的端口号相同</span><br><span class="line">    &quot;listen&quot;:&quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;protocol&quot;: &quot;vmess&quot;,</span><br><span class="line">    &quot;settings&quot;: &#123;</span><br><span class="line">      &quot;clients&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;id&quot;: &quot;xxxxxxxxx&quot;, &#x2F;&#x2F;此处为安装时生成的 id</span><br><span class="line">          &quot;level&quot;: 1,</span><br><span class="line">          &quot;alterId&quot;: 64      &#x2F;&#x2F;此处为安装时生成的 alterId</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;streamSettings&quot;: &#123;</span><br><span class="line">      &quot;network&quot;: &quot;ws&quot;,</span><br><span class="line">      &quot;wsSettings&quot;: &#123;</span><br><span class="line">        &quot;path&quot;: &quot;&#x2F;SoftDown&quot;   &#x2F;&#x2F;此处为路径，需要和下面 NGINX 上面的路径配置一样</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;],</span><br><span class="line">  &quot;outbounds&quot;: [&#123;</span><br><span class="line">    &quot;protocol&quot;: &quot;freedom&quot;,</span><br><span class="line">    &quot;settings&quot;: &#123;&#125;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    &quot;protocol&quot;: &quot;blackhole&quot;,</span><br><span class="line">    &quot;settings&quot;: &#123;&#125;,</span><br><span class="line">    &quot;tag&quot;: &quot;blocked&quot;</span><br><span class="line">  &#125;],</span><br><span class="line">  &quot;routing&quot;: &#123;</span><br><span class="line">    &quot;rules&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;type&quot;: &quot;field&quot;,</span><br><span class="line">        &quot;ip&quot;: [&quot;geoip:private&quot;],</span><br><span class="line">        &quot;outboundTag&quot;: &quot;blocked&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>13.把V2rey设为开机启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable v2ray</span><br></pre></td></tr></table></figure>
-<p>14.启动V2ray</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start v2ray</span><br></pre></td></tr></table></figure>
-<p>15.到这我们就搭建成功V2ray了，电脑端下载V2rayN，安卓下载V2rayNG，苹果下载小火箭，照着上面的代码填就ok了<br>下面是搭建博客<br>16.建个人博客的化需要在宝塔面板的网站里再添加一个站点，输入www.域名，创建FTP，创建MySQL，点击提交<br>17.提交后把弹出来的FTP、和数据库的资料备份一下<br>18.参考第7条申请SSL证书并开启强制HTTPS<br>19.打开Wordpress官方网站<a href="https://www.wordpress.org" target="_blank" rel="noopener">https://www.wordpress.org</a>点击简体中文，滚动到下面，点击下载<br>20.打开你网站的根目录，点击左上角的上传，点击添加文件，找到刚刚下的压缩包，点击开始上传<br>21.将上传好的压缩包解压出来<br>22.将解压出来的文件夹里的所有文件都剪切到网站根目录上<br>23.删除网站根目录上的index.html文件<br>24.打开网站，填写之前保存的数据库资料，填好后点击安装<br>25.后面按照你自己的需求填写，点击安装Wordpress<br>26.到这我们的博客也就搭建好了</p>
+    <p>记录一下我搭梯子的过程<a id="more"></a><br>我是参考波仔的方法搭的梯子<a href="https://www.v2rayssr.com/" target="_blank" rel="noopener">波仔的博客</a></p>
+<h1 id="一、购买vps"><a href="#一、购买vps" class="headerlink" title="一、购买vps"></a>一、购买vps</h1><p>我使用的<a href="https://billing.virmach.com/aff.php?aff=9923" target="_blank" rel="noopener">virmach</a>家的vps，没有别的原因，就是因为它便宜，才1.25美元一个月,部署时的系统请选择Debian9。<a href="https://billing.virmach.com/aff.php?aff=9923" target="_blank" rel="noopener">virmach网址</a><br>当然便宜是有风险的，这个服务器提供商是个小公司，而且ip只提供一个，想要换ip需要花5美金。但是看看这$1.25一个月、$3.25一个季度、$12.5一年的价钱，肯定值得赌<br>风险承受能力较低的可以使用老牌服务商<a href="https://www.vultr.com/?ref=8471374" target="_blank" rel="noopener">vultr</a></p>
+<h1 id="二、购买域名"><a href="#二、购买域名" class="headerlink" title="二、购买域名"></a>二、购买域名</h1><p>我使用的<a href="https://cloud.tencent.com/" target="_blank" rel="noopener">腾讯云</a>，腾讯是国内数一数二的大公司选他就完事了，购买完域名需要把域名解析到刚刚购买的服务器上</p>
+<h1 id="三、ssh连接服务器"><a href="#三、ssh连接服务器" class="headerlink" title="三、ssh连接服务器"></a>三、ssh连接服务器</h1><p>FinalShell就完事了</p>
+<h1 id="四、安装BBRPLUS加速"><a href="#四、安装BBRPLUS加速" class="headerlink" title="四、安装BBRPLUS加速"></a>四、安装BBRPLUS加速</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;github.com&#x2F;ylx2016&#x2F;Linux-NetSpeed&#x2F;releases&#x2F;download&#x2F;sh&#x2F;tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh</span><br></pre></td></tr></table></figure>
+<h1 id="五、检查SELinux是否为关闭状态"><a href="#五、检查SELinux是否为关闭状态" class="headerlink" title="五、检查SELinux是否为关闭状态"></a>五、检查SELinux是否为关闭状态</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;sbin&#x2F;sestatus -v</span><br></pre></td></tr></table></figure>
+<p>如果返回参数为enabled即为开启,disabled为关闭<br>一般SELinux是关闭状态,如果是开启的，修改/etc/selinux/config文件，将SELINUX=enforcing改为SELINUX=disabled重启VPS以后SELinux即为关闭状态</p>
+<h1 id="六、安装基础依赖环境"><a href="#六、安装基础依赖环境" class="headerlink" title="六、安装基础依赖环境"></a>六、安装基础依赖环境</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install wget</span><br></pre></td></tr></table></figure>
+<h1 id="七、安装Trojan"><a href="#七、安装Trojan" class="headerlink" title="七、安装Trojan"></a>七、安装Trojan</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;V2RaySSR&#x2F;Trojansh&#x2F;master&#x2F;trojan1.sh&quot; &amp;&amp; chmod +x trojan1.sh &amp;&amp; .&#x2F;trojan1.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;V2RaySSR&#x2F;Trojansh&#x2F;master&#x2F;trojan2.sh&quot; &amp;&amp; chmod +x trojan2.sh &amp;&amp; .&#x2F;trojan2.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;V2RaySSR&#x2F;Trojansh&#x2F;master&#x2F;trojan3.sh&quot; &amp;&amp; chmod +x trojan3.sh &amp;&amp; .&#x2F;trojan3.sh</span><br></pre></td></tr></table></figure>
+<p>需要把最后显示的信息记录一下</p>
+<h1 id="八、安装客户端并使用"><a href="#八、安装客户端并使用" class="headerlink" title="八、安装客户端并使用"></a>八、安装客户端并使用</h1><p><a href="https://gitee.com/lixianglong115/image_store/raw/master/v2rayN-win-with-trojan.7z" target="_blank" rel="noopener">win客户端</a><br><a href="https://github.com/V2RaySSR/Trojan/releases/download/Trojan_Android/igniter-0.1.0-pre-alpha10.apk" target="_blank" rel="noopener">安卓客户端</a><br><a href="https://github.com/lixianglong115/image_store/contributors/master/Shadowrocket-2.1.11.7z" target="_blank" rel="noopener">苹果客户端</a></p>
+<h1 id="九、注意事项"><a href="#九、注意事项" class="headerlink" title="九、注意事项"></a>九、注意事项</h1><blockquote>
+<p>Trojan配置信息存放在：/usr/local/etc/trojan/配置.txt<br>Chrome浏览器地址栏前面若没有小锁，Trojan服务绝对不成功<br>Chrome浏览器若是有小锁，Trojan服务绝对正常<br>若是客户端不能连接Trojan,请尝试重启Trojan服务<br>Trojan服务重启命令：systemctl restart trojan</p>
+</blockquote>
 
     
 
@@ -303,7 +300,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.xianglong115.top/2020/03/24/V2rey与博客共存/" title="V2rey与博客共存" target="_blank">http://www.xianglong115.top/2020/03/24/V2rey与博客共存/</a>
+          <a href="http://www.xianglong115.top/2020/04/07/搭建Trojan服务器/" title="搭建Trojan服务器" target="_blank">http://www.xianglong115.top/2020/04/07/搭建Trojan服务器/</a>
         </li>
         
         <li>
@@ -370,7 +367,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xianglong115.top/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xianglong115.top/2020/04/07/%E6%90%AD%E5%BB%BATrojan%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -385,18 +382,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/25/%E8%A7%A3%E5%86%B3github%E4%B8%8B%E8%BD%BD%E6%9E%81%E6%85%A2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          解决github下载极慢
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/24/%E5%88%A9%E7%94%A8svp4%E8%A7%86%E9%A2%91%E6%8F%92%E5%B8%A7%E5%8F%9860%E5%B8%A7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利用svp4视频插帧变60帧</div>
+    <a href="/2020/03/25/%E8%A7%A3%E5%86%B3github%E4%B8%8B%E8%BD%BD%E6%9E%81%E6%85%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决github下载极慢</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -5,9 +5,9 @@
   <subtitle>welcome to my blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.xianglong115.com/"/>
-  <updated>2020-03-25T02:44:01.718Z</updated>
-  <id>http://www.xianglong115.com/</id>
+  <link href="http://www.xianglong115.top/"/>
+  <updated>2020-04-07T13:57:58.988Z</updated>
+  <id>http://www.xianglong115.top/</id>
   
   <author>
     <name>祥龙</name>
@@ -17,13 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>解决github下载极慢</title>
-    <link href="http://www.xianglong115.com/2020/03/25/%E8%A7%A3%E5%86%B3github%E4%B8%8B%E8%BD%BD%E6%9E%81%E6%85%A2/"/>
-    <id>http://www.xianglong115.com/2020/03/25/%E8%A7%A3%E5%86%B3github%E4%B8%8B%E8%BD%BD%E6%9E%81%E6%85%A2/</id>
-    <published>2020-03-25T02:22:54.000Z</published>
-    <updated>2020-03-25T02:44:01.718Z</updated>
+    <title>搭建Trojan服务器</title>
+    <link href="http://www.xianglong115.top/2020/04/07/%E6%90%AD%E5%BB%BATrojan%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://www.xianglong115.top/2020/04/07/%E6%90%AD%E5%BB%BATrojan%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2020-04-07T12:22:35.000Z</published>
+    <updated>2020-04-07T13:57:58.988Z</updated>
     
-    <content type="html"><![CDATA[<p>另辟蹊径解决clone Github极慢的问题<a id="more"></a><br>先说网上介绍的最多的办法<br>1.改hosts文件（不知道为啥，在我的电脑上并不好使）<br>2.挂代理<br>···<br>git clone xxx –depth=1<br>···<br>（全局规则和单独代理都试了只有50k/s效果不是很好）<br>3.利用码云来导入Github仓库，再克隆码云。（靠谱！但是，有时候码云会抽风让你等好久好久）<br>/重点来了—<br>4.复制下载链接发给手机，手机挂梯子，开全局后下载直接好几兆每秒。<br>说实话我也不是很清楚同样是挂代理，电脑的作用就有限，手机的速度就飞起。</p>]]></content>
+    <content type="html"><![CDATA[<p>记录一下我搭梯子的过程<a id="more"></a><br>我是参考波仔的方法搭的梯子<a href="https://www.v2rayssr.com/" target="_blank" rel="noopener">波仔的博客</a></p><h1 id="一、购买vps"><a href="#一、购买vps" class="headerlink" title="一、购买vps"></a>一、购买vps</h1><p>我使用的<a href="https://billing.virmach.com/aff.php?aff=9923" target="_blank" rel="noopener">virmach</a>家的vps，没有别的原因，就是因为它便宜，才1.25美元一个月,部署时的系统请选择Debian9。<a href="https://billing.virmach.com/aff.php?aff=9923" target="_blank" rel="noopener">virmach网址</a><br>当然便宜是有风险的，这个服务器提供商是个小公司，而且ip只提供一个，想要换ip需要花5美金。但是看看这$1.25一个月、$3.25一个季度、$12.5一年的价钱，肯定值得赌<br>风险承受能力较低的可以使用老牌服务商<a href="https://www.vultr.com/?ref=8471374" target="_blank" rel="noopener">vultr</a></p><h1 id="二、购买域名"><a href="#二、购买域名" class="headerlink" title="二、购买域名"></a>二、购买域名</h1><p>我使用的<a href="https://cloud.tencent.com/" target="_blank" rel="noopener">腾讯云</a>，腾讯是国内数一数二的大公司选他就完事了，购买完域名需要把域名解析到刚刚购买的服务器上</p><h1 id="三、ssh连接服务器"><a href="#三、ssh连接服务器" class="headerlink" title="三、ssh连接服务器"></a>三、ssh连接服务器</h1><p>FinalShell就完事了</p><h1 id="四、安装BBRPLUS加速"><a href="#四、安装BBRPLUS加速" class="headerlink" title="四、安装BBRPLUS加速"></a>四、安装BBRPLUS加速</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;github.com&#x2F;ylx2016&#x2F;Linux-NetSpeed&#x2F;releases&#x2F;download&#x2F;sh&#x2F;tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh</span><br></pre></td></tr></table></figure><h1 id="五、检查SELinux是否为关闭状态"><a href="#五、检查SELinux是否为关闭状态" class="headerlink" title="五、检查SELinux是否为关闭状态"></a>五、检查SELinux是否为关闭状态</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;sbin&#x2F;sestatus -v</span><br></pre></td></tr></table></figure><p>如果返回参数为enabled即为开启,disabled为关闭<br>一般SELinux是关闭状态,如果是开启的，修改/etc/selinux/config文件，将SELINUX=enforcing改为SELINUX=disabled重启VPS以后SELinux即为关闭状态</p><h1 id="六、安装基础依赖环境"><a href="#六、安装基础依赖环境" class="headerlink" title="六、安装基础依赖环境"></a>六、安装基础依赖环境</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install wget</span><br></pre></td></tr></table></figure><h1 id="七、安装Trojan"><a href="#七、安装Trojan" class="headerlink" title="七、安装Trojan"></a>七、安装Trojan</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;V2RaySSR&#x2F;Trojansh&#x2F;master&#x2F;trojan1.sh&quot; &amp;&amp; chmod +x trojan1.sh &amp;&amp; .&#x2F;trojan1.sh</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;V2RaySSR&#x2F;Trojansh&#x2F;master&#x2F;trojan2.sh&quot; &amp;&amp; chmod +x trojan2.sh &amp;&amp; .&#x2F;trojan2.sh</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;V2RaySSR&#x2F;Trojansh&#x2F;master&#x2F;trojan3.sh&quot; &amp;&amp; chmod +x trojan3.sh &amp;&amp; .&#x2F;trojan3.sh</span><br></pre></td></tr></table></figure><p>需要把最后显示的信息记录一下</p><h1 id="八、安装客户端并使用"><a href="#八、安装客户端并使用" class="headerlink" title="八、安装客户端并使用"></a>八、安装客户端并使用</h1><p><a href="https://gitee.com/lixianglong115/image_store/raw/master/v2rayN-win-with-trojan.7z" target="_blank" rel="noopener">win客户端</a><br><a href="https://github.com/V2RaySSR/Trojan/releases/download/Trojan_Android/igniter-0.1.0-pre-alpha10.apk" target="_blank" rel="noopener">安卓客户端</a><br><a href="https://github.com/lixianglong115/image_store/contributors/master/Shadowrocket-2.1.11.7z" target="_blank" rel="noopener">苹果客户端</a></p><h1 id="九、注意事项"><a href="#九、注意事项" class="headerlink" title="九、注意事项"></a>九、注意事项</h1><blockquote><p>Trojan配置信息存放在：/usr/local/etc/trojan/配置.txt<br>Chrome浏览器地址栏前面若没有小锁，Trojan服务绝对不成功<br>Chrome浏览器若是有小锁，Trojan服务绝对正常<br>若是客户端不能连接Trojan,请尝试重启Trojan服务<br>Trojan服务重启命令：systemctl restart trojan</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下我搭梯子的过程
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决github下载极慢</title>
+    <link href="http://www.xianglong115.top/2020/03/25/%E8%A7%A3%E5%86%B3github%E4%B8%8B%E8%BD%BD%E6%9E%81%E6%85%A2/"/>
+    <id>http://www.xianglong115.top/2020/03/25/%E8%A7%A3%E5%86%B3github%E4%B8%8B%E8%BD%BD%E6%9E%81%E6%85%A2/</id>
+    <published>2020-03-25T02:22:54.000Z</published>
+    <updated>2020-04-07T14:00:12.358Z</updated>
+    
+    <content type="html"><![CDATA[<p>另辟蹊径解决clone Github极慢的问题<a id="more"></a><br>先说网上介绍的最多的办法<br>1.改hosts文件（不知道为啥，在我的电脑上并不好使）<br>2.挂代理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone xxx --depth&#x3D;1</span><br></pre></td></tr></table></figure><p>（全局规则和单独代理都试了只有50k/s效果不是很好）<br>3.利用码云来导入Github仓库，再克隆码云。（靠谱！但是，有时候码云会抽风让你等好久好久）<br>/重点来了—<br>4.复制下载链接发给手机，手机挂梯子，开全局后下载直接好几兆每秒。<br>说实话我也不是很清楚同样是挂代理，电脑的作用就有限，手机的速度就飞起。</p>]]></content>
     
     <summary type="html">
     
@@ -37,8 +56,8 @@
   
   <entry>
     <title>V2rey与博客共存</title>
-    <link href="http://www.xianglong115.com/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/"/>
-    <id>http://www.xianglong115.com/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/</id>
+    <link href="http://www.xianglong115.top/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/"/>
+    <id>http://www.xianglong115.top/2020/03/24/V2rey%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%B1%E5%AD%98/</id>
     <published>2020-03-24T07:52:35.000Z</published>
     <updated>2020-03-24T09:10:34.490Z</updated>
     
@@ -56,8 +75,8 @@
   
   <entry>
     <title>利用svp4视频插帧变60帧</title>
-    <link href="http://www.xianglong115.com/2020/03/24/%E5%88%A9%E7%94%A8svp4%E8%A7%86%E9%A2%91%E6%8F%92%E5%B8%A7%E5%8F%9860%E5%B8%A7/"/>
-    <id>http://www.xianglong115.com/2020/03/24/%E5%88%A9%E7%94%A8svp4%E8%A7%86%E9%A2%91%E6%8F%92%E5%B8%A7%E5%8F%9860%E5%B8%A7/</id>
+    <link href="http://www.xianglong115.top/2020/03/24/%E5%88%A9%E7%94%A8svp4%E8%A7%86%E9%A2%91%E6%8F%92%E5%B8%A7%E5%8F%9860%E5%B8%A7/"/>
+    <id>http://www.xianglong115.top/2020/03/24/%E5%88%A9%E7%94%A8svp4%E8%A7%86%E9%A2%91%E6%8F%92%E5%B8%A7%E5%8F%9860%E5%B8%A7/</id>
     <published>2020-03-24T07:22:47.000Z</published>
     <updated>2020-03-25T02:07:49.383Z</updated>
     
@@ -75,8 +94,8 @@
   
   <entry>
     <title>wps专业版激活码</title>
-    <link href="http://www.xianglong115.com/2020/03/24/wps%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A0%81/"/>
-    <id>http://www.xianglong115.com/2020/03/24/wps%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A0%81/</id>
+    <link href="http://www.xianglong115.top/2020/03/24/wps%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A0%81/"/>
+    <id>http://www.xianglong115.top/2020/03/24/wps%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A0%81/</id>
     <published>2020-03-24T07:15:53.000Z</published>
     <updated>2020-03-25T02:06:17.389Z</updated>
     
@@ -94,8 +113,8 @@
   
   <entry>
     <title>去掉win10输入法中的简体</title>
-    <link href="http://www.xianglong115.com/2020/03/24/%E5%8E%BB%E6%8E%89win10%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%AD%E7%9A%84%E7%AE%80%E4%BD%93/"/>
-    <id>http://www.xianglong115.com/2020/03/24/%E5%8E%BB%E6%8E%89win10%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%AD%E7%9A%84%E7%AE%80%E4%BD%93/</id>
+    <link href="http://www.xianglong115.top/2020/03/24/%E5%8E%BB%E6%8E%89win10%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%AD%E7%9A%84%E7%AE%80%E4%BD%93/"/>
+    <id>http://www.xianglong115.top/2020/03/24/%E5%8E%BB%E6%8E%89win10%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%AD%E7%9A%84%E7%AE%80%E4%BD%93/</id>
     <published>2020-03-24T07:11:22.000Z</published>
     <updated>2020-03-25T02:08:47.142Z</updated>
     
@@ -113,8 +132,8 @@
   
   <entry>
     <title>win10专业版激活秘钥</title>
-    <link href="http://www.xianglong115.com/2020/03/24/win10%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A7%98%E9%92%A5/"/>
-    <id>http://www.xianglong115.com/2020/03/24/win10%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A7%98%E9%92%A5/</id>
+    <link href="http://www.xianglong115.top/2020/03/24/win10%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A7%98%E9%92%A5/"/>
+    <id>http://www.xianglong115.top/2020/03/24/win10%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E7%A7%98%E9%92%A5/</id>
     <published>2020-03-24T04:06:34.000Z</published>
     <updated>2020-03-25T02:05:34.460Z</updated>
     
@@ -132,8 +151,8 @@
   
   <entry>
     <title>win10开启卓越性能模式</title>
-    <link href="http://www.xianglong115.com/2020/03/22/win10%E5%BC%80%E5%90%AF%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.xianglong115.com/2020/03/22/win10%E5%BC%80%E5%90%AF%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E6%A8%A1%E5%BC%8F/</id>
+    <link href="http://www.xianglong115.top/2020/03/22/win10%E5%BC%80%E5%90%AF%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.xianglong115.top/2020/03/22/win10%E5%BC%80%E5%90%AF%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E6%A8%A1%E5%BC%8F/</id>
     <published>2020-03-22T07:43:21.000Z</published>
     <updated>2020-03-25T02:03:52.830Z</updated>
     
@@ -151,8 +170,8 @@
   
   <entry>
     <title>笔记本OBS显示器捕获黑屏设置方法</title>
-    <link href="http://www.xianglong115.com/2020/03/22/%E7%AC%94%E8%AE%B0%E6%9C%ACOBS%E6%98%BE%E7%A4%BA%E5%99%A8%E6%8D%95%E8%8E%B7%E9%BB%91%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/"/>
-    <id>http://www.xianglong115.com/2020/03/22/%E7%AC%94%E8%AE%B0%E6%9C%ACOBS%E6%98%BE%E7%A4%BA%E5%99%A8%E6%8D%95%E8%8E%B7%E9%BB%91%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/</id>
+    <link href="http://www.xianglong115.top/2020/03/22/%E7%AC%94%E8%AE%B0%E6%9C%ACOBS%E6%98%BE%E7%A4%BA%E5%99%A8%E6%8D%95%E8%8E%B7%E9%BB%91%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/"/>
+    <id>http://www.xianglong115.top/2020/03/22/%E7%AC%94%E8%AE%B0%E6%9C%ACOBS%E6%98%BE%E7%A4%BA%E5%99%A8%E6%8D%95%E8%8E%B7%E9%BB%91%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/</id>
     <published>2020-03-22T05:57:09.000Z</published>
     <updated>2020-03-25T02:07:34.701Z</updated>
     

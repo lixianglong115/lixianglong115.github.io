@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xianglong115.top/"/>
-  <updated>2020-05-22T11:45:00.104Z</updated>
+  <updated>2020-05-26T06:30:08.834Z</updated>
   <id>http://www.xianglong115.top/</id>
   
   <author>
@@ -17,13 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>本地项目推送到码云</title>
+    <link href="http://www.xianglong115.top/2020/05/26/%E5%A6%82%E4%BD%95%E6%8A%8A%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81%E5%88%B0%E7%A0%81%E4%BA%91/"/>
+    <id>http://www.xianglong115.top/2020/05/26/%E5%A6%82%E4%BD%95%E6%8A%8A%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81%E5%88%B0%E7%A0%81%E4%BA%91/</id>
+    <published>2020-05-26T06:18:32.000Z</published>
+    <updated>2020-05-26T06:30:08.834Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍把本地项目推送到码云的方法<a id="more"></a></p><h1 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h1><p>在码云创建一个项目</p><h1 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h1><p>在文件夹内打开命令提示符（cmd）</p><h1 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h1><p>git init（初始化仓库）</p><h1 id="四、"><a href="#四、" class="headerlink" title="四、"></a>四、</h1><p>git remote add origin 你的远程库地址（关联远程仓库）<br>如：git remote add origin <a href="https://gitee.com/lixianglong115/lixianglong115.git" target="_blank" rel="noopener">https://gitee.com/lixianglong115/lixianglong115.git</a></p><h1 id="五、"><a href="#五、" class="headerlink" title="五、"></a>五、</h1><p>git add . 文件  或 git add -A  或 git add .  （提交文件）</p><h1 id="六、"><a href="#六、" class="headerlink" title="六、"></a>六、</h1><p>git commit -m ‘注释’  (提交文件)</p><h1 id="七、"><a href="#七、" class="headerlink" title="七、"></a>七、</h1><p>git push -u origin master（推送到远程仓库）<br>ps：推送到远程仓库可能报错<br>git pull origin master （拉取远程仓库文件合并）<br>git pull origin master –allow-unrelated-histories<br>重复步骤8，9，10即可</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;介绍把本地项目推送到码云的方法
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>给NOKIA7Plus刷上MIUI12</title>
     <link href="http://www.xianglong115.top/2020/05/22/%E7%BB%99NOKIA7Plus%E5%88%B7%E4%B8%8AMIUI12/"/>
     <id>http://www.xianglong115.top/2020/05/22/%E7%BB%99NOKIA7Plus%E5%88%B7%E4%B8%8AMIUI12/</id>
     <published>2020-05-22T09:03:02.000Z</published>
-    <updated>2020-05-22T11:45:00.104Z</updated>
+    <updated>2020-05-23T14:01:12.301Z</updated>
     
-    <content type="html"><![CDATA[<p>小米新发布的MIUI12巨屌，把已经陪我征战了多年的N7P安排上试试。<a id="more"></a><br>ROM作者发布页面：<a href="https://gitee.com/yunbaba/MiuiOTA/raw/miui/changelog/miui_arm64_ab.txt" target="_blank" rel="noopener">https://gitee.com/yunbaba/MiuiOTA/raw/miui/changelog/miui_arm64_ab.txt</a></p><h1 id="注意！！！刷机需要解bl锁！！！"><a href="#注意！！！刷机需要解bl锁！！！" class="headerlink" title="注意！！！刷机需要解bl锁！！！"></a>注意！！！刷机需要解bl锁！！！</h1><p>NOKIA用户请找光卡大神付费解锁（不是广告）。QQ群号：783816637   光卡微博ID：HCT_Mascot_洛克人EFI</p><h1 id="刷机方法"><a href="#刷机方法" class="headerlink" title="刷机方法"></a>刷机方法</h1><h2 id="一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步"><a href="#一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步" class="headerlink" title="一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步"></a>一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步</h2><h3 id="（一）国行转换国际版"><a href="#（一）国行转换国际版" class="headerlink" title="（一）国行转换国际版"></a>（一）国行转换国际版</h3><p>1.移除谷歌账户<br>设置→账号→XXXXXXXX.gmail.com→移除账号<br>2.获取临时root权限<br>参考：<a href="https://www.dospy.wang/thread-2222-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-2222-1-1.html</a><br>手机安装面具，进入Download mode模式，使用ADB刷入修补过的boot文件<br>3.更改SKUID<br>参考：<a href="https://www.dospy.wang/thread-6804-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-6804-1-1.html</a><br>刷入twrp，进入twrp点Cancel，右滑底边操作栏，点Install，点Select Storage，选择MicroSD，然后选择SKUID-Switcher.zip，右滑底边操作栏，然后会自动切换skuid，如果原来是600WW (国际) ，会置入600CN (国行)，反亦同理，然后点退回，选择Reboot，选择BootLoader，选择Do Not Install，即刻将置入DM模式，现在开始线刷国行或国际版固件<br>4.刷入官方410c国际版完整包</p><h2 id="二、进入download-mode"><a href="#二、进入download-mode" class="headerlink" title="二、进入download mode"></a>二、进入download mode</h2><p>参考：<a href="https://www.dospy.wang/thread-69-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-69-1-1.html</a></p><h2 id="三、刷入fastboot-boot-twrp-img"><a href="#三、刷入fastboot-boot-twrp-img" class="headerlink" title="三、刷入fastboot boot twrp.img"></a>三、刷入fastboot boot twrp.img</h2><p>ADB直接刷入就行</p><h2 id="四、在twrp执行wipe，也就是双清，然后安装Permissiver-v4-zip"><a href="#四、在twrp执行wipe，也就是双清，然后安装Permissiver-v4-zip" class="headerlink" title="四、在twrp执行wipe，也就是双清，然后安装Permissiver_v4.zip"></a>四、在twrp执行wipe，也就是双清，然后安装Permissiver_v4.zip</h2><p>一定要在双清后刷入Permissiver_v4.zip再刷入MIUI12的包</p><h2 id="五、刷入MIUI12的包"><a href="#五、刷入MIUI12的包" class="headerlink" title="五、刷入MIUI12的包"></a>五、刷入MIUI12的包</h2><p>ADB直接刷入就行</p><h2 id="六、刷入magisk"><a href="#六、刷入magisk" class="headerlink" title="六、刷入magisk"></a>六、刷入magisk</h2><p>ADB直接刷入就行</p>]]></content>
+    <content type="html"><![CDATA[<p>小米新发布的MIUI12巨屌，把已经陪我征战了多年的N7P安排上试试。<a id="more"></a><br>ROM作者发布页面：<a href="https://gitee.com/yunbaba/MiuiOTA/raw/miui/changelog/miui_arm64_ab.txt" target="_blank" rel="noopener">https://gitee.com/yunbaba/MiuiOTA/raw/miui/changelog/miui_arm64_ab.txt</a></p><h1 id="注意！！！刷机需要解bl锁！！！"><a href="#注意！！！刷机需要解bl锁！！！" class="headerlink" title="注意！！！刷机需要解bl锁！！！"></a>注意！！！刷机需要解bl锁！！！</h1><p>NOKIA用户请找光卡大神付费解锁（不是广告）。QQ群号：783816637   光卡微博ID：HCT_Mascot_洛克人EFI</p><h1 id="刷机方法"><a href="#刷机方法" class="headerlink" title="刷机方法"></a>刷机方法</h1><h2 id="一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步"><a href="#一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步" class="headerlink" title="一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步"></a>一、刷入官方410c国际版完整包，必须在官方包开机后进入下一步</h2><h3 id="（一）国行转换国际版"><a href="#（一）国行转换国际版" class="headerlink" title="（一）国行转换国际版"></a>（一）国行转换国际版</h3><p>1.移除谷歌账户<br>设置→账号→XXXXXXXX.gmail.com→移除账号<br>2.获取临时root权限<br>参考：<a href="https://www.dospy.wang/thread-2222-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-2222-1-1.html</a><br>手机安装面具，进入Download mode模式，使用ADB刷入修补过的boot文件<br>3.更改SKUID<br>参考：<a href="https://www.dospy.wang/thread-6804-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-6804-1-1.html</a><br>刷入twrp，进入twrp点Cancel，右滑底边操作栏，点Install，点Select Storage，选择MicroSD，然后选择SKUID-Switcher.zip，右滑底边操作栏，然后会自动切换skuid，如果原来是600WW (国际) ，会置入600CN (国行)，反亦同理，然后点退回，选择Reboot，选择BootLoader，选择Do Not Install，即刻将置入DM模式，现在开始线刷国行或国际版固件<br>4.刷入官方410c国际版完整包</p><h2 id="二、进入download-mode"><a href="#二、进入download-mode" class="headerlink" title="二、进入download mode"></a>二、进入download mode</h2><p>参考：<a href="https://www.dospy.wang/thread-69-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-69-1-1.html</a></p><h2 id="三、刷入fastboot-boot-twrp-img"><a href="#三、刷入fastboot-boot-twrp-img" class="headerlink" title="三、刷入fastboot boot twrp.img"></a>三、刷入fastboot boot twrp.img</h2><p>ADB直接刷入就行</p><h2 id="四、在twrp执行wipe，也就是双清，然后安装Permissiver-v4-zip"><a href="#四、在twrp执行wipe，也就是双清，然后安装Permissiver-v4-zip" class="headerlink" title="四、在twrp执行wipe，也就是双清，然后安装Permissiver_v4.zip"></a>四、在twrp执行wipe，也就是双清，然后安装Permissiver_v4.zip</h2><p>一定要在双清后刷入Permissiver_v4.zip再刷入MIUI12的包<br>刷入twrp可以参考<a href="https://www.dospy.wang/thread-2222-1-1.html" target="_blank" rel="noopener">https://www.dospy.wang/thread-2222-1-1.html</a></p><h2 id="五、刷入MIUI12的包"><a href="#五、刷入MIUI12的包" class="headerlink" title="五、刷入MIUI12的包"></a>五、刷入MIUI12的包</h2><p>twrp直接刷入就行</p><h2 id="六、刷入magisk"><a href="#六、刷入magisk" class="headerlink" title="六、刷入magisk"></a>六、刷入magisk</h2><p>twrp直接刷入就行</p>]]></content>
     
     <summary type="html">
     
